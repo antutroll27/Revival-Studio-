@@ -1,42 +1,239 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #6FD7C2;
+  --foreground: #0a0a0a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+body{
+  font-family:var(--font-geist-sans);
+  color:var(--foreground);
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+h1{
+  padding-top: 2em;
+  font-size: 4.25rem;
+  font-weight: 700;  
+  letter-spacing: -0.1rem;
+  line-height: 1.15;
+  -webkit-font-smoothing: antialised;
+  color: #7B1623;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+h2{
+  padding-top: 2.5em;
+  font-size: 2.25rem;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0.01rem;
+  -webkit-font-smoothing: antialised;
+  color: #7B1623;
 }
 
-a {
-  color: inherit;
+p{
+display:block;
+text-decoration: none;
+color: var(--foreground);
+font-size:1.4rem;
+font-weight:600;
+padding: 2em;
+}
+
+
+
+.navbar{
+    position:fixed;
+    top:1em;
+    left:0;
+    width:100vw;
+    z-index:2;
+    display:flex;
+    justify-content: space-between;
+    gap:1em;
+    padding:1em;
+}
+
+.navbar .logo{
+    font-size: x-large;
+    padding:1em;
+}
+
+.navbar .col:nth-child(1){
+    flex:1;
+}
+.navbar .col:nth-child(2){
+  flex:2;
+  display:flex;
+  justify-content: space-between;
+}
+
+.navbar .navigation-items .nav-item{
+  font-size: 1.5em;
+  margin-bottom: 0.6rem;
+  color: #7B1623;
+  
+  
+}
+.navbar .nav-end {
+  font-size: large; 
+  font-weight: 400;
+  color: #7B1623;
+}
+
+/* Style for Next.js Link components */
+.navbar a, .navigation-items a, .logo a {
   text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  font-weight: 600;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.home{
+  width:100%;
+  height:100svh;
+  overflow:hidden;
+  background-color: var(--background);
+}
+
+.home .header{
+  position:absolute;
+  top:25%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:100%;
+}
+
+.home .header h1{
+  font-size:10.5vw;
+  text-align:center;
+  padding-right: 0.5em;
+  padding-top: 0.7em;
+}
+
+.home .heroImage{
+  position:absolute;
+  left:50%;
+  bottom:0%;
+  transform:translateX(-50%);
+  width:95%;
+  height: 50vh;
+  overflow:hidden;
+
+}
+
+.work{
+  text-align:center;
+  padding:15em 1em;
+  display:flex;
+  flex-direction: column;
+  gap:2em;
+  background-color: var(--background);
+}
+
+
+.work .Projects{
+  width:35%;
+  display:flex;
+  margin:0 auto;
+  flex-direction: column;
+  gap: 4em;
+  padding-top: 3em;
+}
+
+.work .Projects img{
+  aspect-ratio: 4/5;
+
+}
+
+.work-heading{
+  padding-top: 6em;
+  font-size: 10rem;
+}
+
+.about, .contact{
+  padding:15em 1em;
+  display:flex;
+  gap:1em;
+  background-color: var(--background);
+}
+
+.story-heading {
+  font-size: 4rem;
+  font-weight: 600;
+  padding-left: 3em;
+  padding-top: 2em;
+  color: #7B1623;
+  
+}
+
+.about .col:nth-child(1),.contact .col:nth-child(1){
+  flex:1;
+}
+
+.about .col:nth-child(2),.contact .col:nth-child(2){
+  flex:2;
+  display:flex;
+  flex-direction: column;
+  gap: 2em;
+} 
+  
+.about .aboutImage{
+  aspect-ratio: 5/7;
+}
+  
+.contact{
+  width:100vw;
+  height:100%;
+  min-height: 100svh;
+}
+
+.contact .SocialMedia{
+  bottom:1.5em;
+  display:flex;
+  gap: 1em;
+}
+
+.contact .h2{
+  font-size: 5rem;
+
+}
+  
+.letter, .word, .line{
+  position:relative;
+  display:inline-block;
+  will-change:transform;
+}
+
+.revealer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  background-color: var(--foreground); /* This is the color of the revealer itself */
+  transform-origin: top center; /* Animation scales from the top */
+  z-index: 1000; /* High z-index to be on top of other page content */
+  pointer-events: none; /* Allows clicks to pass through when it's (partially) transparent or scaled */
+  /* Initial state before GSAP animation (scaleY: 1) is implicit */
+}
+
+/* View Transitions API styles */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: inherit;
+  animation-timing-function: inherit;
+}
+
+::view-transition {
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in-out;
 }
