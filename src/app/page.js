@@ -15,7 +15,10 @@ export default function Home() {
         <h1>Revival Studio.</h1>
       </div>
       <div className="heroImage">
-        <Image src="/hero.jpg" alt="Hero" width={2000} height={1000} />
+        <video autoPlay loop muted playsInline width="2000" height="500">
+          <source src="/hero.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
     </>

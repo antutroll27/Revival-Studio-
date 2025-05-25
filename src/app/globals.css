@@ -1,5 +1,5 @@
 :root {
-  --background: #6FD7C2;
+  --background: #c1e4dd;
   --foreground: #0a0a0a;
 }
 
@@ -100,7 +100,6 @@ padding: 2em;
 .home{
   width:100%;
   height:100svh;
-  overflow:hidden;
   background-color: var(--background);
 }
 
@@ -122,12 +121,21 @@ padding: 2em;
 .home .heroImage{
   position:absolute;
   left:50%;
-  bottom:0%;
+  bottom:3%;
   transform:translateX(-50%);
   width:95%;
   height: 50vh;
   overflow:hidden;
+  border-radius: 20%;
 
+}
+
+.home .heroImage video {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  border-radius: inherit;
+  display: block;
 }
 
 .work{

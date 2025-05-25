@@ -9,7 +9,7 @@ const Work = () => {
     <>
         <div className="revealer"></div>
         <div className="work">
-            <h1>Our Work</h1>
+            <h1 className='work-heading'>Our Work</h1>
             <div className="Projects">
                 <img src="hero.jpg" alt="hero" />
                 <img src="hero.jpg" alt="hero" />
