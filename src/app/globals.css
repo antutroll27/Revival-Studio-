@@ -13,6 +13,29 @@ body{
   font-family:var(--font-geist-sans);
   color:var(--foreground);
   background-color: var(--background); /* Apply background to the whole body */
+  position: relative; /* Create stacking context */
+}
+
+/* Background video container */
+.background-video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Place behind content */
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.1; /* 10% opacity */
 }
 
 
@@ -80,6 +103,7 @@ padding: 2em;
   flex:2;
   display:flex;
   justify-content: flex-end;
+  align-items: center; /* Added this for vertical alignment */
   padding-right: 10em;
 }
 
@@ -89,7 +113,7 @@ padding: 2em;
   margin-right: 15em; /* Adjust as needed */
 }
 
-.navbar .navigation-items .nav-item{
+.navbar .navigation-items .nav-item {
   font-size: 1.1em;
   color: #7B1623;
   margin-right: 4em; /* Adjust for horizontal spacing */
@@ -99,11 +123,15 @@ padding: 2em;
 .navbar .navigation-items .nav-item:last-child {
   margin-right: 0; /* Remove margin from the last item */
 }
-.navbar .nav-end {
+.navbar .nav-end  p{
   font-size: large; 
-  font-weight: 400;
+  font-weight: 600;
   color: #7B1623;
+  padding: 0; /* Added to remove default p padding */
+  margin: 0; /* Added to remove default p margin */
 }
+
+
 
 /* Style for Next.js Link components */
 .navbar a, .navigation-items a, .logo a {
@@ -116,7 +144,10 @@ padding: 2em;
 .home{
   width:100%;
   height:100svh;
-  background-color: var(--background);
+  /* Remove solid background to allow video to show through */
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
 }
 
 .home .header{
@@ -140,7 +171,7 @@ padding: 2em;
 .home .heroImage{
   position:absolute;
   left:50%;
-  bottom: -37vh;
+  bottom: -40vh;
   transform:translateX(-50%);
   width:100%;
   height: 68vh;
@@ -160,11 +191,13 @@ padding: 2em;
 
 .work{
   text-align:center;
-  padding:15em 1em;
+  padding: 20em 1em 15em 1em; /* Reduced top padding, maintained bottom and side padding */
   display:flex;
   flex-direction: column;
   gap:2em;
-  background-color: var(--background);
+  background-color: transparent; /* Make transparent to show background video */
+  position: relative;
+  z-index: 1;
 }
 
 
@@ -183,7 +216,7 @@ padding: 2em;
 }
 
 .work-heading{
-  padding-top: 6em;
+  padding-top: 0;
   font-size: 10rem;
 }
 
@@ -191,13 +224,15 @@ padding: 2em;
   padding:15em 1em;
   display:flex;
   gap:1em;
-  background-color: var(--background);
+  background-color: transparent; /* Make transparent to show background video */
+  position: relative;
+  z-index: 1;
 }
 
 .story-heading {
   font-size: 4rem;
   font-weight: 600;
-  padding-left: 3em;
+  padding-left: 4.5em;
   padding-top: 2em;
   color: #7B1623;
   
@@ -215,7 +250,7 @@ padding: 2em;
 } 
   
 .about .aboutImage{
-  aspect-ratio: 5/7;
+  aspect-ratio: 16/9;
 }
   
 .contact{

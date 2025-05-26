@@ -22,7 +22,7 @@ export default function About() {
                     the way we make, build and imagine.
                 </h2>
                 <div className="aboutImage">
-                    <Image src="/hero.jpg" alt="Hero" width={2000} height={1000} />
+                    <Image src="/hero.jpg" alt="Hero" width={1000} height={500} />
                 </div>
             </div>
             
