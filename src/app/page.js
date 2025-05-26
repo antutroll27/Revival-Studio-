@@ -12,7 +12,7 @@ export default function Home() {
     <div className="revealer"></div>
     <div className="home">
       <div className="header">
-        <h1>Revival Studio.</h1>
+        <h1>LIVING MATERIALS FOR A REGENERATIVE FUTURE</h1>
       </div>
       <div className="heroImage">
         <video autoPlay loop muted playsInline width="2000" height="500">

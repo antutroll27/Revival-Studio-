@@ -104,7 +104,7 @@ const Navbar = () => {
                       <Link href='/about' onClick={handleNavigation('/about')}>About</Link>
                   </div>
                   <div className='nav-item'>
-                      <Link href='/work' onClick={handleNavigation('/work')}>Work</Link>
+                      <Link href='/work' onClick={handleNavigation('/work')}> Work</Link>
                   </div>
                   <div className='nav-item'>
                       <Link href='/contact' onClick={handleNavigation('/contact')}>Contact</Link>
