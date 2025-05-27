@@ -50,6 +50,7 @@ export default function Home() {
             <source src="/hero.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
+          <span className="hero-text-overlay">Discover Materials</span>
         </div>
       </div>
     </>

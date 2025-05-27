@@ -163,7 +163,7 @@ padding: 2em;
   font-size:7.9vw;
   text-align:center;
   padding-right: 1.5em;
-  padding-left: 0.9em;
+  padding-left: 1em;
   padding-top: 0.5em;
   word-spacing: 0.255em;
   line-height: 1; /* Reduce vertical space between lines */
@@ -172,15 +172,15 @@ padding: 2em;
 .home .heroImage{
   position:absolute;
   left:50%;
-  bottom: -33vh;
+  bottom: -40vh; /* Adjusted to bring more of the taller video on screen */
   transform:translateX(-50%);
   width:100%;
-  height: 68vh;
+  height: 85vh; /* Increased height */
   overflow:hidden;
   border-radius: 20%;
   z-index: 1;
-  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 50%, transparent 90%);
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 50%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 40%, transparent 80%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 40%, transparent 80%);
 
 }
 
@@ -308,6 +308,31 @@ padding: 2em;
   padding-left: 5em; /* Align 'Send us a message' with navbar logo */
   font-weight: 600;
   font-size: 4em;
+}
+
+
+.hero-text-overlay {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10; /* Ensure it's on top of the video */
+  color: #c1e4dd; /* Example text color */
+  font-size: 9em; /* Example font size */
+  font-weight: semi-bold;/* Example text shadow for readability */
+  text-align: center;
+  
+}
+
+.contact .SocialMedia {
+  margin-top: 1em; /* Space above social media links */
+  display: flex;     /* Use flexbox for alignment */
+  gap: 1em;          /* Space between social media links, adjust as needed */
+}
+
+.contact .SocialMedia p {
+  color: #800000; /* Maroon color */
+  /* display: inline-block and margins are no longer needed here due to flex gap */
 }
 
 /* View Transitions API styles */
