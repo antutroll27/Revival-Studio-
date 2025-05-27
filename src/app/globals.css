@@ -160,12 +160,13 @@ padding: 2em;
 }
 
 .home .header h1{
-  font-size:7.2vw;
+  font-size:7.9vw;
   text-align:center;
   padding-right: 1.5em;
   padding-left: 0.5em;
   padding-top: 0.5em;
   word-spacing: 0.255em;
+  line-height: 1; /* Reduce vertical space between lines */
 }
 
 .home .heroImage{
@@ -230,10 +231,10 @@ padding: 2em;
 }
 
 .story-heading {
-  font-size: 4rem;
+  font-size: 7rem;
   font-weight: 600;
-  padding-left: 4.5em;
-  padding-top: 2em;
+  padding-left: 3em;
+  padding-top: 1em;
   color: #7B1623;
   
 }
@@ -282,11 +283,29 @@ padding: 2em;
   left: 0;
   width: 100vw;
   height: 100svh;
-  background-color: var(--foreground); /* This is the color of the revealer itself */
+  background-color: #006B6F; /* This is the color of the revealer itself */
   transform-origin: top center; /* Animation scales from the top */
   z-index: 1000; /* High z-index to be on top of other page content */
   pointer-events: none; /* Allows clicks to pass through when it's (partially) transparent or scaled */
+  will-change: transform; /* Hint for browser optimization */
   /* Initial state before GSAP animation (scaleY: 1) is implicit */
+}
+
+/* Custom styles for contact page H2 spacing */
+.contact .col .contacts > h2:nth-child(2),
+.contact .col .contacts-redux > h2:nth-child(2) {
+  padding-top: 0.5em; /* Reduce space above email addresses */
+  font-weight: bold; /* Make email addresses bold */
+}
+
+.contact .col .contacts-redux > h2:first-child {
+  padding-top: 1em; /* Reduce space above 'General Inquiries' to close gap between blocks */
+}
+
+.contact > .col:first-child > h2 {
+  padding-left: 5em; /* Align 'Send us a message' with navbar logo */
+  font-weight: 600;
+  font-size: 4em;
 }
 
 /* View Transitions API styles */

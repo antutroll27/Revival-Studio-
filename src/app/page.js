@@ -42,7 +42,7 @@ export default function Home() {
       <div className="home">
         <div className="header">
           <h1 ref={h1Ref}> {/* Removed opacity: 0 from H1 */}
-            LIVING MATERIALS FOR A REGENERATIVE FUTURE
+            Living Materials For A Regenerative Future
           </h1>
         </div>
         <div className="heroImage">

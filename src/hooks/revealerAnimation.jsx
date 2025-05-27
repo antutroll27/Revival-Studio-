@@ -14,9 +14,11 @@ export default function revealerAnimation() {
     useGSAP(() => {
         gsap.to('.revealer', {
             scaleY: 0,
-            duration: 1.00,
-            delay: 1,
-            ease: "hop"
+            duration: 1.3,
+            delay: 0.3,
+            ease: "expo.inOut",
+            force3D: true,
+            overwrite: true
         });
     });
 }
