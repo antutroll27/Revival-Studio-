@@ -163,7 +163,7 @@ padding: 2em;
   font-size:7.9vw;
   text-align:center;
   padding-right: 1.5em;
-  padding-left: 0.5em;
+  padding-left: 0.9em;
   padding-top: 0.5em;
   word-spacing: 0.255em;
   line-height: 1; /* Reduce vertical space between lines */
@@ -172,13 +172,15 @@ padding: 2em;
 .home .heroImage{
   position:absolute;
   left:50%;
-  bottom: -40vh;
+  bottom: -33vh;
   transform:translateX(-50%);
   width:100%;
   height: 68vh;
   overflow:hidden;
   border-radius: 20%;
   z-index: 1;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 50%, transparent 90%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 50%, transparent 90%);
 
 }
 
