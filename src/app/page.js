@@ -42,7 +42,7 @@ export default function Home() {
       <div className="home">
         <div className="header">
           <h1 ref={h1Ref}> {/* Removed opacity: 0 from H1 */}
-            Living Materials For A Regenerative Future
+            LIVING MATERIALS FOR A REGENERATIVE FUTURE
           </h1>
         </div>
         <div className="heroImage">
@@ -50,7 +50,7 @@ export default function Home() {
             <source src="/hero.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <span className="hero-text-overlay">Discover Materials</span>
+          
         </div>
       </div>
     </>

@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import { ViewTransitions } from "next-view-transitions";
@@ -13,6 +13,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
+  subsets: ["latin"],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], // Weights from 100 to 900
+  style: ['normal', 'italic'], // Include normal and italic styles
+});
+
 export const metadata = {
   title: "Revival Studio",
   description: "Living canvases for a regenerative tomorrow",
@@ -23,7 +30,7 @@ export default function RootLayout({ children }) {
     
     <ViewTransitions>
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${interTight.variable}`} suppressHydrationWarning>
         <div className="background-video-container">
           <video autoPlay loop muted playsInline className="background-video">
             <source src="/backgroundvideo.mp4" type="video/mp4" />
