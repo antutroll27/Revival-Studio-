@@ -32,10 +32,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${interTight.variable}`} suppressHydrationWarning>
         <div className="background-video-container">
+          {/*
           <video autoPlay loop muted playsInline className="background-video">
             <source src="/backgroundvideo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
-          </video>
+          </video> 
+          */}
         </div>
         <Navbar />
         {children}
